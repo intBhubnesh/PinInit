@@ -5,6 +5,7 @@ import authServices from '@/services/auth'
 import { useDispatch } from 'react-redux'
 import { login, logout } from '@/store/authSlice'
 import { Footer, Header } from '@/components'
+import PostCard from '@/components/PostCard'
 
 
 export default function Page(){
@@ -36,6 +37,7 @@ export default function Page(){
     <Header />
     <div className='text-3xl text-zinc-500 text-center'>
        Home
+       <PostCard $id='asd' source='pin' featuredImage='' />
     </div>
     <Footer/>
     </>

@@ -15,7 +15,7 @@ export default function Home() {
                 <p className="text-xl text-zinc-400 mt-8">Discover a seamless way to capture and organize inspiration from across the web. With just one click, save images to your personalized collection and bring your ideas to life. Whether you're building mood boards or gathering research, our extension gives you complete control over the images you need.</p>
                 <div>
                     <Link
-                    href='/signUp'
+                    href='/logIn'
                     >
                     <Button lable="Sign Up"  />
                     </Link>

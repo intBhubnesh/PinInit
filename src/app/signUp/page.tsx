@@ -11,19 +11,22 @@ const page = () => {
 
   return (
     <div className="bg-zinc-900 h-screen flex w-full   overflow-hidden">
-        <div className="w-1/2 flex h-full relative z-0">
-            <div className="absolute top-0 left-0 -z-10 bg-pink-50 h-full ">
-                <img className="object-cover h-full " src="https://cloud.appwrite.io/console/_app/immutable/assets/login-dark-mode.CXyYQeDN.png" alt="" />
+        <div className="w-1/2  flex h-full relative z-0">
+            <div className="absolute top-0 left-0 -z-10  h-full w-full ">
+                <img className="object-cover h-full w-full" src="https://cloud.appwrite.io/console/_app/immutable/assets/login-dark-mode.CXyYQeDN.png" alt="" />
             </div>
             <div className="px-8 py-16 flex w-full flex-col items-start justify-between">
                 <h3 className="text-2xl font-semibold text-zinc-300">pinInit<span className="text-pink-600">_</span></h3>
                 <h2 className="text-6xl text-zinc-300 ">Save any inpiration form anywhere<span className="text-pink-600 text-5xl">_</span></h2>
             </div>
         </div>
-        <div className="p-8 items-start h-full justify-center w-1/2 flex-col inline-flex">
+        <div className="p-8 items-start h-full max-w-[520px] m-auto justify-center w-1/2 flex-col inline-flex">
             <div className="w-full">
-                <h3 className="text-2xl text-zinc-200  font-medium">Sign in</h3>
+                <h3 className="text-2xl text-zinc-200  font-medium">Sign up</h3>
                 <div>
+                <div className="w-full ">
+                        <InputField label="Name" type="text" ref={ref}/>
+                    </div>
                     <div className="w-full ">
                         <InputField label="Email" type="email" ref={ref}/>
                     </div>
@@ -31,14 +34,20 @@ const page = () => {
                         <InputField label="Password" type="password" ref={ref}/>
                     </div>
                 </div>
-                <div className="w-full flex mt-6 gap-5 justify-center flex-col">
+                <div className="flex items-start justify-start gap-2 mt-6">
+                    <div className="inline-flex w-5 items-center justify-center">
+                        <input className="" type="checkbox" name="Term&Condition" id="Term&Condition" />
+                    </div>
+                    <label className="text-zinc-300 text-sm">By registering, you agree that you have read, understand, and acknowledge our <span className="underline">Privacy Policy</span> and accept our <span className="underline">General Terms of Use</span>.</label>
+                </div>
+                <div className="w-full flex mt-6 gap-6 justify-center flex-col">
                         <div className="inline-flex items-center justify-center">
                             <button className="w-full  text-white text-sm font-semibold  bg-pink-600 h-10 rounded-[4px]">Sign In</button>
                         </div>
                         <div className="flex w-full gap-5 items-center justify-between  font-medium">
-                            <div className=" h-[.5px] w-full bg-zinc-500"></div>
+                            <div className=" h-[.5px] w-full bg-zinc-600/60"></div>
                             <p className="text-[12px] text-zinc-500 tracking-wider font-semibold">OR</p>
-                            <div className=" h-[.5px] w-full bg-zinc-500"></div>
+                            <div className=" h-[.5px] w-full  bg-zinc-600/60"></div>
                         </div>
                         <div className="inline-flex items-center justify-center">
                             <button className="w-full text-white text-sm font-medium  flex gap-2 items-center justify-center bg-zinc-700 h-10 rounded-[4px]">
@@ -51,13 +60,7 @@ const page = () => {
                 </div>
                 <div className="flex mt-6 items-center justify-center gap-5">
                     <div>
-                        <Link href='./ForgotPassword' className="text-sm text-zinc-300">Forgot Password ?</Link>
-                    </div>
-                    <div className="h-4 w-[.5px] bg-zinc-500/60">
-
-                    </div>
-                    <div>
-                        <Link href='./ForgotPassword' className="text-sm text-zinc-300">Sign Up</Link>
+                        <h5 className="text-sm font-normal text-zinc-300">Already got an account? <Link className="underline" href='./logIn'>Log In</Link></h5>
                     </div>
                 </div>
             </div>
