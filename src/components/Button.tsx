@@ -7,14 +7,16 @@ interface ButtonProps {
     textColor ?: string,
     onClick ?: () => void,
     className ?: string,
+    type ?: string
 }
 
 const Button : React.FC<ButtonProps> = ({
     lable = "Get started" ,
     bgColor = 'bg-pink-600',
-    textColor = "text-pink-50",
+    textColor = "text-pink-50",   
     onClick,
     className,
+    type = "Submit"
 }) => {
   return (
     <motion.button

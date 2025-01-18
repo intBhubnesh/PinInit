@@ -1,7 +1,14 @@
 import PinCard from "@/components/PinCard";
+import React from "react";
 
-  async function PinPage({ params }: { params: { id: string } }) {
-    // asynchronous access of `params.id`.
-    const { id } = await params
-    return <p>ID: {id}</p>
+
+export default  function PinPage({ params  }: any ) {
+    const {id} = React.use<any>(params)
+    return <div>
+        <div>
+            <div>
+                
+            </div>
+        </div>
+    </div>;
   }
