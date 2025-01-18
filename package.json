@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.11",
     "@next/env": "^15.1.3",
     "@reduxjs/toolkit": "^2.5.0",
     "appwrite": "^16.1.0",
@@ -28,6 +29,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-redux": "^7.1.34",
+    "daisyui": "^4.12.23",
     "eslint": "^9",
     "eslint-config-next": "15.1.3",
     "postcss": "^8",

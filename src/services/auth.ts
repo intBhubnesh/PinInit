@@ -23,6 +23,7 @@ export class AuthServices {
     // Method to sign up a user
     async signUp({ name, email, password }: { name: string; email: string; password: string }): Promise<any> {
         try {
+            await this.logOut();
             const userAccount = await this.account.create(ID.unique(), email, password, name);
             if (userAccount) {
                 return await this.logIn({ email, password });
@@ -38,8 +39,15 @@ export class AuthServices {
     // Method to log in a user
     async logIn({ email, password }: { email: string; password: string }): Promise<object | null> {
         try {
+            try {
+                await this.logOut();
+            } catch (error) {
+                console.log("no active user ");
+
+            }
             const session = await this.account.createEmailPasswordSession(email, password);
             return session;
+
         } catch (error) {
             console.error("AuthServices :: logIn :: error", error);
             throw new Error("Invalid credentials or network issue. Please try again.");

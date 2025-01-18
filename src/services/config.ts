@@ -9,6 +9,7 @@ interface Pin {
     featuredImage: string;
     status: string;
     userId: string;
+    collectionId ?: [];
 }
 
 export class Services{
@@ -25,7 +26,7 @@ export class Services{
         this.bucket = new Storage(this.client)
     }
 
-    async createPin({title, slug, content, featuredImage, status, userId} : Pin) : Promise<any>{
+    async createPin({title, slug, content, featuredImage, status, userId, collectionId = []} : Pin) : Promise<any>{
         try {
             const pin = await this.database.createDocument(
                 conf.appwriteDatabaseId,
@@ -35,8 +36,9 @@ export class Services{
                     title,
                     content,
                     featuredImage,
-                    status,
-                    userId
+                    status ,
+                    userId,
+                    collectionId
                 }
             )
             return pin
@@ -46,7 +48,7 @@ export class Services{
         return null
     }
 
-    async updatePin(slug : string, {title, content, featuredImage, status} : Pin): Promise<any> {
+    async updatePin(slug : string, {title, content, featuredImage, status, collectionId = []} : Pin): Promise<any> {
         try {
             const updatePin = await this.database.updateDocument(
                 conf.appwriteDatabaseId,
@@ -57,6 +59,7 @@ export class Services{
                     content,
                     featuredImage,
                     status,
+                    collectionId
                 }
             )
             return updatePin
@@ -117,7 +120,7 @@ export class Services{
 
     }
 
-    async uploadFile(file : any){
+    async uploadFile(file : File){
         try {
             const newFile = await this.bucket.createFile(
                 conf.appwriteBucketId,

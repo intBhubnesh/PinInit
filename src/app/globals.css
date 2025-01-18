@@ -10,6 +10,18 @@
   }
 }
 
+textarea {
+    background-color: none;
+    border: 1px solid #ccc; /* Add a custom border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+textarea:focus {
+    outline: none; /* Removes the focus outline */
+    border-color: #ec4899; /* Change border color on focus */
+    box-shadow: 0 0 3px #f472b6; /* Add a focus shadow */
+}
+
 input {
   border: 1px solid #ccc; /* Add a custom border */
   border-radius: 4px; /* Rounded corners */

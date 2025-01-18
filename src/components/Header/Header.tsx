@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import Button from "../Button"
 import { RootState } from "@/store/store"
 import LogOutBtn from "./LogOutBtn"
+import Link from "next/link"
 
 const Header = () => {
     const status = useSelector((state : RootState) => state.auth.status)
@@ -14,7 +15,8 @@ const Header = () => {
                 <h3 className="text-2xl font-semibold text-zinc-300">pinInit<span className="text-pink-600">_</span></h3>
             </div>
             <div>
-                PageSite
+                <Link href='/board'>Board</Link>
+                <Link href='/createPost'>CreatePost</Link>
             </div>
             <div className="">
                 {

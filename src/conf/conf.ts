@@ -4,6 +4,7 @@ interface AppwriteConfig {
     appwriteDatabaseId: string;
     appwriteCollectionId: string;
     appwriteBucketId: string;
+    appwriteEndpoint: string
   }
 
 
@@ -13,6 +14,7 @@ const conf = {
     appwriteDatabaseId : String(process.env.NEXT_PUBLIC_APPWRITE_DATABASE_URL),
     appwriteCollectionId : String(process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_URL),
     appwriteBucketId : String(process.env.NEXT_PUBLIC_APPWRITE_BUCKET_URL),
+    appwriteEndpoint : String(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
 }
 
 export default conf ;
