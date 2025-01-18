@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Image Collector",
+    "version": "2.0",
+    "description": "Select and download images from the webpage.",
+
+        "permissions": [
+          "activeTab",
+          "downloads",
+          "*://*.pinterest.com/*"
+        ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "assets/icon.png"
+    },
+    "icons": {
+      "48": "assets/icon.png"
+    }
+  }
